@@ -2,10 +2,10 @@ import { FC } from 'react'
 import Card from '../Card/Card'
 import CardCreator from '../CardCreator/CardCreator'
 import styles from './CardList.module.sass'
-import { useCardList } from './useCardList'
+import { useProduct } from '../../../hooks/useProduct'
 
 const CardList: FC = () => {
-	const { data: response } = useCardList()
+	const { data: response } = useProduct()
 
 	return (
 		<ul className={styles.cardList}>

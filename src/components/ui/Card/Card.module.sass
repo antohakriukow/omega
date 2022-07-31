@@ -1,20 +1,25 @@
 @import '../../../styles/colors'
+@import '../../../styles/mixins'
 
-.card
-	background: #f6f6f5
+.card__wrapper
+	@include air-block
 	height: 120px
 	width: 220px
 	padding: 10px
+	background: $light-grey
+	&:hover
+		@include air-block-hovered
+
+.card
+	height: 100%
 	display: flex
 
 .card__img
-	height: 120px
-	width: 100px
-	
+	border-radius: 12px
 
 .card__info
-	height: 120px
-	margin-left: 10px
+	height: 100%
+	margin-left: 12px
 	display: flex
 	flex-direction: column
 	justify-content: space-between

@@ -1,16 +1,21 @@
 @import '../../../styles/colors'
+@import '../../../styles/mixins'
 
 .cardCreator
-	background: #f6f6f5
+	@include air-block
+	background: $light-grey
 	height: 120px
 	width: 220px
 	padding: 10px
 	display: flex
 	&:hover
+		@include air-block-hovered
 		cursor: pointer
 		>svg
+			transform: rotate(90deg)
 			color: $orange
 	>svg
 		margin: auto
 		height: 70px
 		width: 70px
+		transition: all 0.2s ease-in-out

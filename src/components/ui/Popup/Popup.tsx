@@ -1,15 +1,19 @@
 import { FC } from 'react'
 import styles from './Popup.module.sass'
 import { usePopup } from './usePopup'
-import cn from 'classnames'
+import Btn from '../Btn/Btn'
+import PopupContent from './PopupContent/PopupContent'
 
 const Popup: FC = () => {
-	const { closeByClickingOnOverlay, isOpened } = usePopup()
+	const { closePopup, isOpened } = usePopup()
 	if (!isOpened) return null
 	return (
 		<div className={styles.popup__container}>
-			<div className={styles.popup__overlay} onClick={closeByClickingOnOverlay} />
-			<div className={styles.popup}></div>
+			<div className={styles.popup__overlay} onClick={closePopup} />
+			<div className={styles.popup}>
+				<Btn icon='MdClose' onClick={closePopup} />
+				<PopupContent />
+			</div>
 		</div>
 	)
 }

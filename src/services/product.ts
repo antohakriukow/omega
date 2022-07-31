@@ -15,8 +15,8 @@ export const ProductService = {
 		return axios.post<IProduct>(getProductUrl(''), dto)
 	},
 
-	async update(_id: string, dto: ProductDTO) {
-		return axios.put<IProduct>(getProductUrl(`/${_id}`), dto)
+	async update(dto: IProduct) {
+		return axios.put<IProduct>(getProductUrl(`/${dto._id}`), dto)
 	},
 
 	async toggleActive(_id: string) {
