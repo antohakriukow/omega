@@ -3,6 +3,7 @@ export interface IProduct {
 	title: string
 	price: number
 	description: string
+	isActive: boolean
 	imageUrl: string
 }
 

@@ -1,6 +1,11 @@
 import { FC } from 'react'
+import CardList from '../../ui/CardList/CardList'
 import styles from './Home.module.sass'
 const Home: FC = () => {
-	return <div>Home</div>
+	return (
+		<div>
+			<CardList />
+		</div>
+	)
 }
 export default Home

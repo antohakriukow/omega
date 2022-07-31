@@ -12,11 +12,15 @@ export const ProductService = {
 	},
 
 	async create(dto: ProductDTO) {
-		return axios.post<string>(getProductUrl(''), dto)
+		return axios.post<IProduct>(getProductUrl(''), dto)
 	},
 
 	async update(_id: string, dto: ProductDTO) {
-		return axios.put<string>(getProductUrl(`/${_id}`), dto)
+		return axios.put<IProduct>(getProductUrl(`/${_id}`), dto)
+	},
+
+	async toggleActive(_id: string) {
+		return axios.put<IProduct>(getProductUrl(`active/${_id}`))
 	},
 
 	async delete(_id: string) {

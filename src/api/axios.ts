@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const axiosWithHeaders = axios.create({
-	baseURL: `${process.env.APP_SERVER_URL}`,
+	baseURL: 'http://localhost:4000',
 	headers: { 'Content-Type': 'application/json' },
 })
 
