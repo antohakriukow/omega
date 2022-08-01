@@ -6,6 +6,7 @@ import Field from '../../../Field/Field'
 import UploadField from '../../../UploadField/UploadField'
 import { usePopup } from '../../usePopup'
 import styles from '../PopupContent.module.sass'
+
 const CreatePopupContent: FC = () => {
 	const {
 		handleSubmit,
@@ -17,6 +18,7 @@ const CreatePopupContent: FC = () => {
 	} = useForm<ProductDTO>({
 		mode: 'onChange',
 	})
+
 	const { submitCreateProduct } = usePopup()
 
 	return (

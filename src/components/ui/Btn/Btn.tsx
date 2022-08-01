@@ -6,11 +6,12 @@ import styles from './Btn.module.sass'
 interface IButton {
 	icon: TypeMaterialIconName
 	title?: string
-	onClick: () => void
+	_id?: string
+	onClick: (e?: React.BaseSyntheticEvent) => void
 }
-const Btn: FC<IButton> = ({ icon, onClick, title }) => {
+const Btn: FC<IButton> = ({ icon, onClick, title, _id }) => {
 	return (
-		<button className={styles.btn} onClick={onClick}>
+		<button data-id={_id} className={styles.btn} onClick={onClick}>
 			<MaterialIcon name={icon} />
 			<p className={styles.btn__title}>{title && title.toLocaleUpperCase()}</p>
 		</button>

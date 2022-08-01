@@ -4,6 +4,7 @@ import { IuiState } from './ui.interface'
 
 const initialState: IuiState = {
 	popupType: null,
+	currentProduct: '',
 }
 
 export const uiSlice = createSlice({
@@ -13,8 +14,11 @@ export const uiSlice = createSlice({
 		setPopupType: (state, action: PayloadAction<Popup>) => {
 			state.popupType = action.payload
 		},
+		setCurrentProduct: (state, action: PayloadAction<string>) => {
+			state.currentProduct = action.payload
+		},
 	},
 })
 
-export const { setPopupType } = uiSlice.actions
+export const { setPopupType, setCurrentProduct } = uiSlice.actions
 export const uiReducer = uiSlice.reducer

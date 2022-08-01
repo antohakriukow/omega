@@ -7,4 +7,10 @@ export interface IProduct {
 	imageUrl: string
 }
 
-export interface ProductDTO extends Omit<IProduct, '_id'> {}
+export interface ProductDTO {
+	title: string
+	price: number
+	description: string
+	isActive: boolean
+	imageUrl: string
+}

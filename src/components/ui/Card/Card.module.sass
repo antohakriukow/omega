@@ -7,8 +7,11 @@
 	width: 220px
 	padding: 10px
 	background: $light-grey
+	transition: all ease-in-out 0.05s
 	&:hover
 		@include air-block-hovered
+		transform: scale(1.01)
+
 
 .card
 	height: 100%
@@ -16,6 +19,7 @@
 
 .card__img
 	border-radius: 12px
+	user-select: none
 
 .card__info
 	height: 100%
@@ -30,6 +34,7 @@
 	overflow: hidden
 	white-space: nowrap
 	text-overflow: ellipsis
+	user-select: none
 
 .card__description
 	margin: 0
@@ -38,7 +43,9 @@
 	overflow: hidden
 	white-space: nowrap
 	text-overflow: ellipsis
+	user-select: none
 
 .card__price
 	margin: 0
 	font-size: 14px
+	user-select: none

@@ -1,9 +1,11 @@
 import { useMutation, useQuery } from '@tanstack/react-query'
 import { ProductService } from '../services/product'
-import { IProduct, ProductDTO } from '../shared/types/product.types'
+import { ProductDTO } from '../shared/types/product.types'
+import { useTypedSelector } from './useTypedSelector'
 
 export const useProduct = () => {
 	const queryData = useQuery(['Product list'], () => ProductService.getAll(), {})
+	const { popupType, currentProduct } = useTypedSelector(state => state.ui)
 
 	const { mutateAsync: createProduct } = useMutation(
 		['create product'],
@@ -17,7 +19,7 @@ export const useProduct = () => {
 
 	const { mutateAsync: updateProduct } = useMutation(
 		['update product'],
-		(data: IProduct) => ProductService.update(data),
+		(data: ProductDTO) => ProductService.update(currentProduct, data),
 		{
 			onSuccess() {
 				queryData.refetch()

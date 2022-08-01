@@ -8,15 +8,15 @@ export const ProductService = {
 	},
 
 	async getById(_id: string) {
-		return axios.get<IProduct>(getProductUrl(`/${_id}`))
+		return axios.get<ProductDTO>(getProductUrl(`/${_id}`))
 	},
 
 	async create(dto: ProductDTO) {
 		return axios.post<IProduct>(getProductUrl(''), dto)
 	},
 
-	async update(dto: IProduct) {
-		return axios.put<IProduct>(getProductUrl(`/${dto._id}`), dto)
+	async update(_id: string, dto: ProductDTO) {
+		return axios.put<ProductDTO>(getProductUrl(`/${_id}`), dto)
 	},
 
 	async toggleActive(_id: string) {
