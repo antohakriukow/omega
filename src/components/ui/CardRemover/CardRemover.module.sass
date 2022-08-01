@@ -1,0 +1,18 @@
+@import '../../../styles/colors'
+@import '../../../styles/mixins'
+
+.cardRemover
+	background: $light-grey
+	height: 120px
+	width: 220px
+	display: flex
+	&:hover
+		cursor: pointer
+		>svg
+			color: $orange
+	>button
+		height: 30px
+		margin: auto
+		transition: all 0.2s ease-in-out
+
+

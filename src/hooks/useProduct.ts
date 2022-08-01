@@ -5,7 +5,7 @@ import { useTypedSelector } from './useTypedSelector'
 
 export const useProduct = () => {
 	const queryData = useQuery(['Product list'], () => ProductService.getAll(), {})
-	const { popupType, currentProduct } = useTypedSelector(state => state.ui)
+	const { currentProduct } = useTypedSelector(state => state.ui)
 
 	const { mutateAsync: createProduct } = useMutation(
 		['create product'],
