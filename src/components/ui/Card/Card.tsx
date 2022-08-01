@@ -1,4 +1,5 @@
 import { FC } from 'react'
+import cn from 'classnames'
 import { getFileUrl } from '../../../api/api.helpers'
 import { useTypedSelector } from '../../../hooks/useTypedSelector'
 import { IProduct } from '../../../shared/types/product.types'
@@ -13,7 +14,11 @@ const Card: FC<ICard> = ({ data }) => {
 	const { deletingProduct } = useTypedSelector(state => state.ui)
 	const deletingCard = deletingProduct === data._id
 	return (
-		<div className={styles.card__wrapper}>
+		<div
+			className={cn(styles.card__wrapper, {
+				[styles.smoky]: !data.isActive,
+			})}
+		>
 			{deletingCard ? (
 				<CardRemover />
 			) : (
@@ -23,7 +28,7 @@ const Card: FC<ICard> = ({ data }) => {
 						<h3 className={styles.card__title}>{data.title}</h3>
 						<p className={styles.card__description}>{data.description}</p>
 						<p className={styles.card__price}>{`Price: ${data.price} $`}</p>
-						<CardToolBar _id={data._id} />
+						<CardToolBar _id={data._id} isActive={data.isActive} />
 					</div>
 				</div>
 			)}

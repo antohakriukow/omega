@@ -5,7 +5,7 @@ import Btn from '../Btn/Btn'
 import PopupForm from './PopupForm'
 
 const Popup: FC = () => {
-	const { closePopup, isOpened, isCreatePopup, popupTitle } = usePopup()
+	const { closePopup, isOpened, popupTitle } = usePopup()
 	if (!isOpened) return null
 
 	return (
@@ -13,7 +13,7 @@ const Popup: FC = () => {
 			<div className={styles.popup__overlay} onClick={closePopup} />
 			<div className={styles.popup}>
 				<Btn icon='MdClose' onClick={closePopup} />
-				<h3 className={styles.popupContent__title}>{popupTitle()} product</h3>
+				<h3 className={styles.popup__title}>{popupTitle()} PRODUCT</h3>
 				<PopupForm />
 			</div>
 		</div>

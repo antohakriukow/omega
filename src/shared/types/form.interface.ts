@@ -9,8 +9,10 @@ export interface IFieldProps {
 }
 
 type TypeInputPropsField = InputHTMLAttributes<HTMLInputElement> & IFieldProps
+type TypeMultilineInputPropsField = InputHTMLAttributes<HTMLTextAreaElement> & IFieldProps
 
 export interface IField extends TypeInputPropsField {}
+export interface IMultilineField extends TypeMultilineInputPropsField {}
 
 export interface IUploadField {
 	folder?: string
@@ -19,5 +21,4 @@ export interface IUploadField {
 	placeholder: string
 	error?: FieldError
 	style?: CSSProperties
-	isNoImage?: boolean
 }

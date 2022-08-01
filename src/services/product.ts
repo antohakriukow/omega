@@ -20,7 +20,7 @@ export const ProductService = {
 	},
 
 	async toggleActive(_id: string) {
-		return axios.put<IProduct>(getProductUrl(`active/${_id}`))
+		return axios.put<IProduct>(getProductUrl(`/active/${_id}`))
 	},
 
 	async delete(_id: string) {

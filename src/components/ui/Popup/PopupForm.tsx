@@ -3,6 +3,7 @@ import { Controller, useForm } from 'react-hook-form'
 import { ProductDTO } from '../../../shared/types/product.types'
 import Btn from '../Btn/Btn'
 import Field from '../Field/Field'
+import MultilineField from '../Field/MultilineField'
 import UploadField from '../UploadField/UploadField'
 
 import styles from './Popup.module.sass'
@@ -22,7 +23,7 @@ const PopupForm: FC = () => {
 	const { onSubmit } = usePopup(setValue)
 
 	return (
-		<form onSubmit={handleSubmit(onSubmit)} className={styles.popupContent__form}>
+		<form onSubmit={handleSubmit(onSubmit)} className={styles.popup__form}>
 			<Field
 				{...register('title', {
 					required: 'Title is required!',
@@ -31,19 +32,13 @@ const PopupForm: FC = () => {
 				error={errors.title}
 			/>
 			<Field
-				{...register('description', {
-					required: 'Description is required!',
-				})}
-				placeholder='Description'
-				error={errors.description}
-			/>
-			<Field
 				{...register('price', {
 					required: 'Price is required!',
 				})}
 				placeholder='Price'
 				error={errors.price}
 			/>
+			<MultilineField {...register('description')} placeholder='Description' error={errors.description} />
 			<Controller
 				name='imageUrl'
 				control={control}
@@ -55,7 +50,7 @@ const PopupForm: FC = () => {
 					required: 'Image is required',
 				}}
 			/>
-			<Btn icon='MdDone' onClick={handleSubmit(onSubmit)} />
+			<Btn icon='MdDone' onClick={handleSubmit(onSubmit)} title='SUBMIT' />
 		</form>
 	)
 }

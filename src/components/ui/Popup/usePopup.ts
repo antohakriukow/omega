@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query'
 import { useEffect } from 'react'
-import { SubmitHandler, UseFormReset, UseFormSetValue } from 'react-hook-form'
+import { SubmitHandler, UseFormSetValue } from 'react-hook-form'
 import { useActions } from '../../../hooks/useActions'
 import { useProduct } from '../../../hooks/useProduct'
 import { useTypedSelector } from '../../../hooks/useTypedSelector'
@@ -19,9 +19,9 @@ export const usePopup = (setValue?: UseFormSetValue<ProductDTO>) => {
 	const isDeletePopup = popupType === 'delete'
 
 	const popupTitle = () => {
-		if (isCreatePopup) return 'Create'
-		if (isUpdatePopup) return 'Update'
-		if (isDeletePopup) return 'Delete'
+		if (isCreatePopup) return 'CREATE'
+		if (isUpdatePopup) return 'UPDATE'
+		if (isDeletePopup) return 'DELETE'
 	}
 
 	useQuery(['product', currentProduct], () => ProductService.getById(currentProduct), {
@@ -79,9 +79,6 @@ export const usePopup = (setValue?: UseFormSetValue<ProductDTO>) => {
 
 	return {
 		isOpened,
-		isCreatePopup,
-		isUpdatePopup,
-		isDeletePopup,
 		popupTitle,
 		closePopup,
 		openCreatePopup,

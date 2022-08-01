@@ -27,11 +27,17 @@ export const useProduct = () => {
 		}
 	)
 
+	const { mutateAsync: buyProduct } = useMutation(['buy product'], (_id: string) => ProductService.toggleActive(_id), {
+		onSuccess() {
+			queryData.refetch()
+		},
+	})
+
 	const { mutateAsync: deleteProduct } = useMutation(['delete product'], (_id: string) => ProductService.delete(_id), {
 		onSuccess() {
 			queryData.refetch()
 		},
 	})
 
-	return { ...queryData, createProduct, updateProduct, deleteProduct }
+	return { ...queryData, createProduct, updateProduct, deleteProduct, buyProduct }
 }

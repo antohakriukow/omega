@@ -1,13 +1,14 @@
 import { forwardRef } from 'react'
-import { IField } from '../../../shared/types/form.interface'
+import cn from 'classnames'
+import { IMultilineField } from '../../../shared/types/form.interface'
 import styles from './Field.module.sass'
 
-const Field = forwardRef<HTMLInputElement, IField>(({ placeholder, error, type = 'text', style, ...props }, ref) => {
+const Field = forwardRef<HTMLTextAreaElement, IMultilineField>(({ placeholder, error, style, ...props }, ref) => {
 	return (
 		<div className={styles.field} style={style}>
 			<label className={styles.field__label}>
 				<span className={styles.field__span}>{placeholder}</span>
-				<input className={styles.field__input} ref={ref} type={type} {...props} />
+				<textarea className={cn(styles.field__input, styles.field__textarea)} ref={ref} {...props} />
 			</label>
 			{error && <div className={styles.field__error}>{error.message}</div>}
 		</div>

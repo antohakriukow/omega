@@ -1,0 +1,39 @@
+@import '../../../styles/colors'
+
+.field
+	margin-bottom: 12px
+
+
+.field__label
+	width: 100%
+	display: flex
+	justify-content: space-between
+
+.field__span
+	display: block
+	font-size: 12px
+	line-height: 16px
+	text-transform: uppercase
+	margin-bottom: 8px
+
+.field__input
+	padding: 0
+	border: 0
+	border-bottom: $dark-grey 1px solid
+	transition: all ease-in-out 200
+	background: transparent
+	width: 200px
+	border-bottom: 1px solid $dark-grey
+	outline: none
+	color: $dark-grey
+	&:focus-within
+		border-color: $light-blue
+
+.field__textarea
+	height: 60px
+	border: $dark-grey 1px solid
+
+.field__error
+	color: $orange
+	margin-top: 8px
+	text-align: right 

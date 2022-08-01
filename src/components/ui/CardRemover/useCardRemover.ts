@@ -1,4 +1,3 @@
-import React from 'react'
 import { useActions } from '../../../hooks/useActions'
 import { useProduct } from '../../../hooks/useProduct'
 import { useTypedSelector } from '../../../hooks/useTypedSelector'
