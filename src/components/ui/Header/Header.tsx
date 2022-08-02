@@ -2,6 +2,6 @@ import { FC } from 'react'
 import styles from './Header.module.sass'
 
 const Header: FC = () => {
-	return <div>Header</div>
+	return <div className={styles.header} />
 }
 export default Header

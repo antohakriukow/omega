@@ -36,6 +36,7 @@ const PopupForm: FC = () => {
 					required: 'Price is required!',
 				})}
 				placeholder='Price'
+				type='number'
 				error={errors.price}
 			/>
 			<MultilineField {...register('description')} placeholder='Description' error={errors.description} />

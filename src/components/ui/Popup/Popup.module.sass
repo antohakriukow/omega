@@ -7,20 +7,20 @@
 	left: 0
 	height: 100vh
 	width: 100vw
-	background: $light-grey
-	opacity: 0.7
+	background: $grey
+	opacity: 0.8
 	z-index: 10
 
 .popup
-	@include air-block
+	@include air-block-hovered
 	position: absolute
 	top: 0
 	bottom: 0
 	left: 0
 	right: 0
 	margin: auto
-	height: 400px
-	width: 400px
+	height: 280px
+	width: 320px
 	padding: 20px
 	background: $light-grey
 	z-index: 20
@@ -31,10 +31,10 @@
 
 	>button
 		height: 40px
-		top: -50px
-		right: -50px
+		top: -35px
+		right: -35px
 		position: absolute
-		color: $dark-grey
+		color: $light-grey
 
 .popup__title
 	color: $dark-grey

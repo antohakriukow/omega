@@ -23,7 +23,9 @@ const Card: FC<ICard> = ({ data }) => {
 				<CardRemover />
 			) : (
 				<div className={styles.card} id={data._id}>
-					<img draggable={false} className={styles.card__img} alt={data.title} src={getFileUrl(data.imageUrl)} />
+					<div className={styles.card__frame}>
+						<img draggable={false} className={styles.card__img} alt={data.title} src={getFileUrl(data.imageUrl)} />
+					</div>
 					<div className={styles.card__info}>
 						<h3 className={styles.card__title}>{data.title}</h3>
 						<p className={styles.card__description}>{data.description}</p>
